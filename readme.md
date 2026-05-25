@@ -26,3 +26,12 @@ Copy-Item .env.example .env
 ```
 
 Then edit `.env` with your local values. Do not commit `.env`.
+
+For Lab 8, real GitHub OAuth and SendGrid credentials are not required unless you are explicitly testing OAuth or email-delivery flows. Placeholder values are acceptable:
+
+```env
+GITHUB_CLIENT_ID=dummy-client-id
+GITHUB_CLIENT_SECRET=dummy-client-secret
+SENDGRID_API_KEY=SG.dummy-key-not-used-in-lab8
+SENDGRID_FROM_ADDRESS=no-reply@example.com
+```
