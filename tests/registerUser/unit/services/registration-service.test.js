@@ -10,7 +10,11 @@ import { UserNotFoundError, UserAlreadyVerifiedError } from '@src/utils/errors.j
 jest.mock('@src/models/User.js');
 jest.mock('@src/services/emailService.js');
 jest.mock('bcrypt');
-jest.mock('jsonwebtoken');
+jest.mock('jsonwebtoken', () => ({
+  ...jest.requireActual('jsonwebtoken'),
+  sign: jest.fn(),
+  verify: jest.fn(),
+}));
 let mockUser;
 
 // Test the user registration service functions
